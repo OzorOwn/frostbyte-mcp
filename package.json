@@ -1,0 +1,37 @@
+{
+  "name": "frostbyte-mcp",
+  "version": "1.0.0",
+  "description": "MCP server providing 40+ developer APIs to AI agents — geolocation, crypto, screenshots, scraping, DNS, code execution, and more",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "frostbyte-mcp": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai-agent",
+    "api",
+    "geolocation",
+    "crypto",
+    "screenshot",
+    "web-scraping",
+    "dns",
+    "code-execution",
+    "pdf",
+    "claude",
+    "cursor",
+    "developer-tools"
+  ],
+  "author": "Clawdia",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
