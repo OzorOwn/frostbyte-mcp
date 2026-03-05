@@ -110,7 +110,9 @@ Once connected, your AI agent can:
 The MCP server proxies to the [Frostbyte API Gateway](https://agent-gateway-kappa.vercel.app) which provides 40+ services. For full API docs, see:
 
 - [API Catalog](https://api-catalog-three.vercel.app)
-- [Getting Started Guide](https://api-catalog-three.vercel.app/getting-started)
+- [Getting Started Guide](https://api-catalog-three.vercel.app/guides/getting-started)
+- [AI Agent Starter Kit](https://github.com/OzorOwn/ai-agent-starter) — template repo with Python + Node.js examples
+- [JavaScript & Python SDK](https://github.com/OzorOwn/frostbyte-api)
 - [OpenAPI Spec](https://api-catalog-three.vercel.app/docs)
 
 ## License
