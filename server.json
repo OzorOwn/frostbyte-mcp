@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.ozorown/frostbyte",
+  "description": "MCP server providing 40+ developer APIs to AI agents — geolocation, crypto prices, screenshots, web scraping, DNS, code execution, PDF generation, and more.",
+  "repository": {
+    "url": "https://github.com/OzorOwn/frostbyte-mcp",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "frostbyte-mcp",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "description": "API key for Frostbyte gateway. Free tier auto-created if not set.",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": true,
+          "name": "FROSTBYTE_API_KEY"
+        },
+        {
+          "description": "Gateway URL. Defaults to https://agent-gateway-kappa.vercel.app",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false,
+          "name": "FROSTBYTE_BASE_URL"
+        }
+      ]
+    }
+  ]
+}

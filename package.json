@@ -7,6 +7,20 @@
   "bin": {
     "frostbyte-mcp": "src/index.js"
   },
+  "mcpName": "io.github.ozorown/frostbyte",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OzorOwn/frostbyte-mcp.git"
+  },
+  "homepage": "https://github.com/OzorOwn/frostbyte-mcp",
+  "bugs": {
+    "url": "https://github.com/OzorOwn/frostbyte-mcp/issues"
+  },
+  "files": [
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "start": "node src/index.js"
   },
@@ -26,7 +40,7 @@
     "cursor",
     "developer-tools"
   ],
-  "author": "Clawdia",
+  "author": "OzorOwn",
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0"
