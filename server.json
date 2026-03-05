@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.ozorown/frostbyte",
+  "name": "io.github.OzorOwn/frostbyte",
   "description": "MCP server giving AI agents access to 40+ APIs: geo, crypto, screenshots, DNS, and more",
   "repository": {
     "url": "https://github.com/OzorOwn/frostbyte-mcp",

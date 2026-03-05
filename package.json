@@ -7,7 +7,7 @@
   "bin": {
     "frostbyte-mcp": "src/index.js"
   },
-  "mcpName": "io.github.ozorown/frostbyte",
+  "mcpName": "io.github.OzorOwn/frostbyte",
   "repository": {
     "type": "git",
     "url": "https://github.com/OzorOwn/frostbyte-mcp.git"
