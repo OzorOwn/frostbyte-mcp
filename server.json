@@ -6,7 +6,6 @@
     "url": "https://github.com/OzorOwn/frostbyte-mcp",
     "source": "github"
   },
-  "version": "1.0.0",
   "packages": [
     {
       "registryType": "oci",
