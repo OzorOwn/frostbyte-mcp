@@ -27,7 +27,7 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/ozorown/frostbyte-mcp:${{ github.event.release.tag_name || 'latest' }}
+            ghcr.io/ozorown/frostbyte-mcp:${{ github.event.release.tag_name || '1.0.0' }}
             ghcr.io/ozorown/frostbyte-mcp:latest
 
   publish-npm:
