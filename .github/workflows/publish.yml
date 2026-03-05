@@ -1,16 +1,39 @@
-name: Publish to npm & MCP Registry
+name: Publish to Docker, npm & MCP Registry
 
 on:
   release:
     types: [published]
+  workflow_dispatch:
 
 permissions:
   contents: read
+  packages: write
   id-token: write
 
 jobs:
+  publish-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/ozorown/frostbyte-mcp:${{ github.event.release.tag_name || 'latest' }}
+            ghcr.io/ozorown/frostbyte-mcp:latest
+
   publish-npm:
     runs-on: ubuntu-latest
+    if: ${{ secrets.NPM_TOKEN != '' }}
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -23,7 +46,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   publish-registry:
-    needs: publish-npm
+    needs: publish-docker
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -31,6 +54,8 @@ jobs:
         run: |
           curl -sL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz" | tar xz mcp-publisher
           sudo mv mcp-publisher /usr/local/bin/
+      - name: Validate server.json
+        run: mcp-publisher validate
       - name: Publish to MCP Registry
         run: |
           mcp-publisher login github-oidc
