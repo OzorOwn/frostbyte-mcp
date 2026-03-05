@@ -22,7 +22,8 @@
     "LICENSE"
   ],
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "start:remote": "node src/remote.js"
   },
   "keywords": [
     "mcp",

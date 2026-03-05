@@ -22,7 +22,66 @@ MCP server that gives AI agents access to 40+ developer APIs through one gateway
 
 ## Quick Start
 
-### Claude Desktop
+### Remote Server (no install needed)
+
+Connect directly via URL — works with Claude, ChatGPT, Cursor, VS Code, and any MCP client:
+
+**SSE endpoint:** `https://frostbyte-mcp.167.148.41.86.nip.io/sse`
+
+**Streamable HTTP endpoint:** `https://frostbyte-mcp.167.148.41.86.nip.io/mcp`
+
+#### Claude Desktop / Claude.ai
+
+Go to Settings > Connectors > Add Custom Connector:
+- **Name:** Frostbyte
+- **URL:** `https://frostbyte-mcp.167.148.41.86.nip.io/sse`
+
+#### Claude Code
+
+```bash
+claude mcp add --transport http "frostbyte" https://frostbyte-mcp.167.148.41.86.nip.io/sse
+```
+
+#### Cursor
+
+Add to `~/.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "frostbyte": {
+      "url": "https://frostbyte-mcp.167.148.41.86.nip.io/sse"
+    }
+  }
+}
+```
+
+#### VS Code
+
+Add to VS Code settings.json:
+
+```json
+{
+  "mcp": {
+    "servers": {
+      "frostbyte": {
+        "type": "http",
+        "url": "https://frostbyte-mcp.167.148.41.86.nip.io/sse"
+      }
+    }
+  }
+}
+```
+
+#### ChatGPT
+
+Go to Settings > Connectors > Create:
+- **Name:** Frostbyte
+- **URL:** `https://frostbyte-mcp.167.148.41.86.nip.io/sse`
+
+### Local Server (stdio)
+
+#### Claude Desktop
 
 Add to your `claude_desktop_config.json`:
 
@@ -40,7 +99,7 @@ Add to your `claude_desktop_config.json`:
 }
 ```
 
-### Cursor / Windsurf
+#### Cursor / Windsurf
 
 Add to your MCP settings:
 
@@ -56,7 +115,7 @@ Add to your MCP settings:
 }
 ```
 
-### npx (no install)
+#### npx (no install)
 
 ```json
 {
